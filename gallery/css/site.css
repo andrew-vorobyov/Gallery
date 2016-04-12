@@ -1,0 +1,33 @@
+.in-container {
+    padding-top:20px;
+}
+
+.photo img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.gallery-nav {
+    margin-bottom: 10px;
+}
+
+
+/*.icons a {*/
+    /*float: left;*/
+    /*display: inline-block;*/
+    /*padding: 4px 0 4px 25px;*/
+    /*margin-right: 5px;*/
+    /*text-decoration: none;*/
+    /*color: #444;*/
+    /*!* вызов спрайта и задание размеров *!*/
+    /*background-image: url('../img/sprite.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 20px auto;*/
+/*}*/
+
+/*.icons .tw {background-position: 0 0;}*/
+/*.icons .fb {background-position: 0 -48px;}*/
+/*.icons .vk {background-position: 0 -96px;}*/
+/*.icons .gl {background-position: 0 -144px;}*/
+/*.icons .rs {background-position: 0 -192px;}*/
+

@@ -1,0 +1,98 @@
+{% extends "layout/main.twig" %}
+
+{% block content %}
+
+    <div class="col-lg-6 col-lg-offset-3">
+
+        <div class="form-group">
+            <a href="/user/{{ username }}" class="btn btn-primary">Back to Gallery</a>
+            <a href="/photoDel/{{ photoId }}/" class="btn btn-danger pull-right">Delete Photo</a>
+            <a href="/user/{{ username }}/photo/{{ photoId }}/load/"
+               class="btn btn-success pull-right">Download Photo</a>
+
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="photo">
+
+            <a href="/user/{{ username }}/photo/{{ photoId }}">
+                <img
+                        src="/pictures/{{ username }}/{{ photoUri }}"/>
+            </a>
+
+            <p>
+                <b>Описание фотографии:</b>
+            </p>
+
+            <p>
+                {{ photoDate }}
+            </p>
+
+            <p>
+               {{ photoDescription }}
+            </p>
+
+            <p>
+                <b>Поделиться фотографией:</b>
+            </p>
+
+                <a href="{{ socialLinks.vk.1 }}">{{ socialLinks.vk.0 }} ({{ socialLinks.vk.2 }})</a>
+                <a href="{{ socialLinks.facebook.1 }}">{{ socialLinks.facebook.0 }} ({{ socialLinks.facebook.2 }})</a>
+                <a href="{{ socialLinks.linkedin.1 }}">{{ socialLinks.linkedin.0 }} ({{ socialLinks.linkedin.2 }})</a>
+
+            </div>
+
+            <p>
+                <b>Комментарии к данной фотографии:</b>
+            </p>
+
+    {% for comment in photo.comment %}
+
+        <p><i>{{ comment.name }}</i><br/>
+        {{ comment.text }}<br/>
+        {{ comment.date }}
+
+        </p>
+
+    {% endfor %}
+
+            <p>
+                <b>Оставить свой комментарий к данной фотографии:</b>
+            </p>
+
+            <div class="panel-group">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+
+                        <form role="form" method="post">
+
+                            <div class="form-group">
+                                <label for="name">Имя:</label></br>
+                                <input type="text" class="form-control" name="name" id="name"></br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="text">Комментарий:</label></br>
+                                <textarea name="text" id="text" class="form-control"></textarea></br>
+                            </div>
+
+                            <input name="photoId" type="hidden" value="{{ photo.id }}">
+                            <input type="submit" class="btn btn-success" name="send" value="Отправить комментарий">
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr/>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

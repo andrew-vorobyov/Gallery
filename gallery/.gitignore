@@ -1,0 +1,7 @@
+# git ignore
+.idea
+.DS_store
+# ignore vendor
+vendor/
+# ignore composer
+composer.lock
